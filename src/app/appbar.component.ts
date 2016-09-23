@@ -5,20 +5,35 @@ import { Component } from '@angular/core';
 	styles: [
 	`
 	.app-bar {
-		background-color: #eee;
+		background-color: #ddd;
+		padding: 10px;
 	}
 
 	`],
-	template: 
+	template:
 	`
-	<header class="row app-bar">
+	<header class="row middle-xs app-bar">
+		<div class="col-xs-4 middle title">
+		{{ title }} {{ menuView }}
+		</div>
 		<div class="col-xs-4">
-			{{ title }}
+		</div>
+		<div class="col-xs-4 end-xs">
+			<button (click)="toggleMenu()" class="material-icons">menu</button>
 		</div>
 	</header>
+	<MainMenuComponent [(hidden)]="hideMenu"></MainMenuComponent>
 	`
 })
 
 export class AppBarComponent {
-	title = 'Python Course';
+	title = 'Angular Starter';
+	hideMenu = true;
+
+	toggleMenu() {
+		if(this.hideMenu)
+			this.hideMenu = false;
+	  else
+			this.hideMenu = true;
+		}
 }

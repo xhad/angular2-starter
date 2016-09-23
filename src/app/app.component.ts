@@ -7,7 +7,8 @@ import { Component } from '@angular/core';
 	`
 	<div class="container">
 		<AppBarComponent></AppBarComponent>
-		<CoursesComponent></CoursesComponent>
+		<ContentComponent></ContentComponent>
+		<FooterComponent></FooterComponent>
 	</div>
 	`
 })
